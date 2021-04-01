@@ -1,2 +1,1 @@
-# Spring-Endpoints
-Creating Endpoints using Spring Boot 
+# Spring-Endpoints Creating Endpoints using Spring Boot 
