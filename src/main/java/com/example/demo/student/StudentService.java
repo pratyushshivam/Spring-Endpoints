@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -21,5 +22,16 @@ public class StudentService {
     public List<Student> getStudents(){
         //	We write the return type so here the returntype is list of strings so we use list
         return studentRepository.findAll(); // returns a list to us
+    }
+
+    public void addNewStudent(Student student) {
+         Optional<Student> studentOptional =studentRepository.findStudentByEmail(student.getEmail());
+         if(studentOptional.isPresent()){
+             throw new IllegalStateException("Email already taken");
+         }
+         else{
+             studentRepository.save(student);
+         }
+        System.out.println(student);
     }
 }

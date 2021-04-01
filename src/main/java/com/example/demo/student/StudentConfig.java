@@ -14,9 +14,9 @@ public class StudentConfig {
     CommandLineRunner commandLineRunner(StudentRepository repository){
          return args -> {
              Student pratyush = new Student("Pratyush", "pratyushshivam7@gmail.com",
-                     LocalDate.of(2000, Month.DECEMBER,5),21);
+                     LocalDate.of(2000, Month.DECEMBER,5));
              Student robin = new Student("Robin", "robin@gmail.com",
-                     LocalDate.of(2003, Month.DECEMBER,2),18);
+                     LocalDate.of(2003, Month.DECEMBER,2));
              repository.saveAll(
                      List.of(pratyush,robin) // save a list of students to database
              );
